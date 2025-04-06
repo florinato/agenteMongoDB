@@ -1,20 +1,3 @@
-# Virtual environment
-venv/
-
-# Environment variables
-.env
-
-# IDE/Editor specific
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Python cache/compiled files
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Other
 .qodo
+.env
+/venv
