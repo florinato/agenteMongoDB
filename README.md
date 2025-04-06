@@ -4,6 +4,8 @@
 
 Este proyecto implementa un agente conversacional basado en el modelo de lenguaje Gemini (a través de Langchain) que permite a los usuarios interactuar con una base de datos MongoDB utilizando lenguaje natural. El agente traduce las peticiones del usuario en comandos `mongosh`, los ejecuta secuencialmente y devuelve los resultados o una respuesta final al usuario.
 
+![Agent Architecture Diagram](Captura%20de%20pantalla%202025-04-06%20122310.png)
+
 ## Características Principales
 
 *   **Interacción en Lenguaje Natural:** Permite realizar consultas y operaciones en MongoDB sin necesidad de escribir comandos `mongosh` directamente.
