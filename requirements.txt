@@ -1,0 +1,11 @@
+# Base dependencies (assuming these are needed, adjust if necessary)
+langchain
+google-generativeai
+python-dotenv
+
+# API dependencies
+fastapi
+uvicorn[standard]
+
+# Database dependencies
+pymongo

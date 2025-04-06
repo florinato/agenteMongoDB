@@ -32,10 +32,14 @@ class GeminiLLM(LLM):
         headers = {
             "Content-Type": "application/json"
         }
+        # Add warning about user's potential lack of DB knowledge
+        warning = "Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.\n\n"
+        modified_prompt = warning + prompt
+
         data = {
             "contents": [{
                 "parts": [{
-                    "text": prompt
+                    "text": modified_prompt # Use the modified prompt here
                 }]
             }],
             "generationConfig": {
@@ -45,7 +49,7 @@ class GeminiLLM(LLM):
         params = {
             "key": self.api_key
         }
-        logging_manager.log_debug("Prompt Enviado", prompt) # Log prompt
+        logging_manager.log_debug("Prompt Enviado", modified_prompt) # Log modified prompt
         response = requests.post(self.endpoint, headers=headers, json=data, params=params)
         response.raise_for_status()
         result = response.json()

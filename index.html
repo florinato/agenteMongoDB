@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongo Agent UI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>MongoDB Agent Interface</h1>
+
+    <div class="container">
+        <div class="chat-area">
+            <label for="user-input">Your Query:</label>
+            <textarea id="user-input" placeholder="Enter your MongoDB query or command..."></textarea> <!-- Removed rows="3" -->
+            <button id="send-button">Send</button>
+
+            <label for="model-output">Agent Response:</label>
+            <textarea id="model-output" readonly placeholder="The agent's final answer will appear here..."></textarea> <!-- Removed rows="5" -->
+        </div>
+
+        <div class="console-area">
+            <h2>Interaction Log</h2>
+            <div id="console-log" class="log-box">
+                <!-- Interaction steps will be appended here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
