@@ -24,7 +24,7 @@ def parse_message(message: str):
     Ignora texto previo a la etiqueta (como timestamps).
     Si no se encuentra el patrón, devuelve (None, message).
     """
-    import re # Importar re aquí o al principio del archivo
+    import re  # Importar re aquí o al principio del archivo
 
     # Buscar el patrón 'etiqueta: contenido', permitiendo texto antes
     # Se busca 'consulta mongo:' o 'respuesta usuario:' seguido de ':' y el resto

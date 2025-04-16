@@ -2,6 +2,11 @@ import os  # Added for path joining
 import uuid
 from typing import Optional  # Add Optional for the new fields
 
+# Local imports
+import communication
+import executor
+import logging_manager
+import security
 import uvicorn
 from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import FileResponse  # Added for serving index.html
@@ -10,14 +15,8 @@ from fastapi.staticfiles import StaticFiles  # Added for static files
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts.prompt import PromptTemplate
-from pydantic import BaseModel
-
-# Local imports
-import communication
-import executor
-import logging_manager
-import security
 from model_integration import GeminiLLM
+from pydantic import BaseModel
 
 # --- FastAPI App Initialization ---
 app = FastAPI(
@@ -27,11 +26,11 @@ app = FastAPI(
 )
 
 # --- Static Files Mounting ---
-# Serve files from the current directory where api_server.py is located
+# Serve static files from the frontend directory
 # The path "/static" means URLs like http://.../static/script.js will work
 # We'll also add a root route for index.html separately
-current_dir = os.path.dirname(os.path.abspath(__file__))
-app.mount("/static", StaticFiles(directory=current_dir), name="static")
+frontend_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "frontend")
+app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
 
 
 # --- In-Memory State Storage ---
@@ -121,7 +120,7 @@ PROMPT = PromptTemplate(input_variables=["history", "input"], template=TEMPLATE)
 @app.get("/")
 async def read_index():
     """Serves the index.html file."""
-    index_path = os.path.join(current_dir, "index.html")
+    index_path = os.path.join(frontend_dir, "index.html")
     if not os.path.exists(index_path):
         raise HTTPException(status_code=404, detail="index.html not found")
     return FileResponse(index_path)

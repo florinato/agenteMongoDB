@@ -1,53 +1,866 @@
-2025-04-06 18:48:35.799 - DEBUG - [Executor]: Starting new mongosh process...
-2025-04-06 18:48:38.466 - DEBUG - [Executor Timeout]: Timeout (2s) waiting for prompt. Last line read: ''
-2025-04-06 18:48:38.466 - DEBUG - [Executor]: mongosh process started successfully.
-2025-04-06 18:48:38.481 - DEBUG - [Executor Input]: use test
-2025-04-06 18:48:39.551 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'test> already on db test'
-2025-04-06 18:48:39.551 - DEBUG - [Executor Output]: test> already on db test
-2025-04-06 18:48:39.572 - DEBUG - [Executor Input]: db.getName()
-2025-04-06 18:48:40.745 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'test> test'
-2025-04-06 18:48:40.745 - DEBUG - [Executor Output]: test> test
-2025-04-06 18:48:40.757 - DEBUG - [Executor Input]: db.test_collection.insertMany([{ name: 'Alice', age: 30 }, { name: 'Bob', age: 25 }])
-2025-04-06 18:48:41.898 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: '}'
-2025-04-06 18:48:41.899 - DEBUG - [Executor Output]: test> {
-                             acknowledged: true,
-                             insertedIds: {
-                               '0': ObjectId('67f2b0681ff60ecbf846b799'),
-                               '1': ObjectId('67f2b0681ff60ecbf846b79a')
-                             }
-                           }
-2025-04-06 18:48:41.926 - DEBUG - [Executor Input]: show collections
-2025-04-06 18:48:43.030 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'test> test_collection'
-2025-04-06 18:48:43.031 - DEBUG - [Executor Output]: test> test_collection
-2025-04-06 18:48:43.060 - DEBUG - [Executor Input]: db.getCollectionNames()
-2025-04-06 18:48:44.147 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'test> [ 'test_collection' ]'
-2025-04-06 18:48:44.148 - DEBUG - [Executor Output]: test> [ 'test_collection' ]
-2025-04-06 18:48:44.165 - DEBUG - [Executor Input]: db.test_collection.countDocuments()
-2025-04-06 18:48:45.283 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'test> 3'
-2025-04-06 18:48:45.284 - DEBUG - [Executor Output]: test> 3
-2025-04-06 18:48:45.300 - DEBUG - [Executor Input]: use historias
-2025-04-06 18:48:46.373 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'test> switched to db historias'
-2025-04-06 18:48:46.374 - DEBUG - [Executor Output]: test> switched to db historias
-2025-04-06 18:48:46.404 - DEBUG - [Executor Input]: db.getName()
-2025-04-06 18:48:47.494 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'historias> historias'
-2025-04-06 18:48:47.494 - DEBUG - [Executor Output]: historias> historias
-2025-04-06 18:48:47.511 - DEBUG - [Executor Input]: db.getCollectionNames()
-2025-04-06 18:48:48.625 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'historias> [ 'ReGenesis' ]'
-2025-04-06 18:48:48.626 - DEBUG - [Executor Output]: historias> [ 'ReGenesis' ]
-2025-04-06 18:48:48.644 - DEBUG - [Executor Input]: use wallapop-clone
-2025-04-06 18:48:49.730 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'historias> switched to db wallapop-clone'
-2025-04-06 18:48:49.731 - DEBUG - [Executor Output]: historias> switched to db wallapop-clone
-2025-04-06 18:48:49.751 - DEBUG - [Executor Input]: db.getName()
-2025-04-06 18:48:50.845 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'wallapop-clone> wallapop-clone'
-2025-04-06 18:48:50.845 - DEBUG - [Executor Output]: wallapop-clone> wallapop-clone
-2025-04-06 18:48:50.864 - DEBUG - [Executor Input]: db.getCollectionNames()
-2025-04-06 18:48:51.949 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'wallapop-clone> [ 'products', 'users' ]'
-2025-04-06 18:48:51.950 - DEBUG - [Executor Output]: wallapop-clone> [ 'products', 'users' ]
-2025-04-06 18:48:51.970 - DEBUG - [Executor Input]: print('hello world')
-2025-04-06 18:48:53.053 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: ''
-2025-04-06 18:48:53.054 - DEBUG - [Executor Output]: wallapop-clone> hello world
-2025-04-06 18:48:53.069 - DEBUG - [Executor Input]: use test; db.test_chain.insertOne({ message: 'chained command test' }); db.test_chain.find()
-2025-04-06 18:48:54.156 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'wallapop-clone> switched to db test;'
-2025-04-06 18:48:54.157 - DEBUG - [Executor Output]: wallapop-clone> switched to db test;
-2025-04-06 18:48:54.184 - DEBUG - [Executor]: Stopping mongosh process...
-2025-04-06 18:48:54.299 - DEBUG - [Executor]: mongosh process stopped.
+2025-04-16 12:18:05.864 - DEBUG - [API]: Started new session: 4c49ce27-3f32-457a-a504-271b8d1497e3
+2025-04-16 12:18:05.877 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Received Query]: {"user_query":"hola","confirmed_command":null}
+2025-04-16 12:18:05.898 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] User Query]: hola
+2025-04-16 12:18:05.907 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1]: Input to LLM: hola
+2025-04-16 12:18:05.919 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          
+                          
+                          Entrada del usuario: hola
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:18:06.774 - DEBUG - [Respuesta Cruda Modelo]: consulta mongo: show dbs
+2025-04-16 12:18:06.806 - DEBUG - [Respuesta Limpia Modelo]: consulta mongo: show dbs
+2025-04-16 12:18:06.816 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: consulta mongo: show dbs
+2025-04-16 12:18:06.827 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Executing Safe Command]: show dbs
+2025-04-16 12:18:06.836 - DEBUG - [Executor]: Starting new mongosh process...
+2025-04-16 12:18:09.389 - DEBUG - [Executor Timeout]: Timeout (2s) waiting for prompt. Last line read: ''
+2025-04-16 12:18:09.400 - DEBUG - [Executor]: mongosh process started successfully.
+2025-04-16 12:18:09.409 - DEBUG - [Executor Input]: show dbs
+2025-04-16 12:18:10.466 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'writing_agent_db   56.00 KiB'
+2025-04-16 12:18:10.477 - DEBUG - [Executor Output]: test> admin              40.00 KiB
+                           config             72.00 KiB
+                           historias          56.00 KiB
+                           local              88.00 KiB
+                           restaurants         1.21 MiB
+                           test               72.00 KiB
+                           wallapop-clone    216.00 KiB
+                           writing_agent_db   56.00 KiB
+2025-04-16 12:18:10.488 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Mongo Output]: test> admin              40.00 KiB
+                                                                                    config             72.00 KiB
+                                                                                    historias          56.00 KiB
+                                                                                    local              88.00 KiB
+                                                                                    restaurants         1.21 MiB
+                                                                                    test               72.00 KiB
+                                                                                    wallapop-clone    216.00 KiB
+                                                                                    writing_agent_db   56.00 KiB
+2025-04-16 12:18:10.498 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Formatted Mongo Response]: respuesta mongo: test> admin              40.00 KiB
+                                                                                                config             72.00 KiB
+                                                                                                historias          56.00 KiB
+                                                                                                local              88.00 KiB
+                                                                                                restaurants         1.21 MiB
+                                                                                                test               72.00 KiB
+                                                                                                wallapop-clone    216.00 KiB
+                                                                                                writing_agent_db   56.00 KiB
+2025-04-16 12:18:10.509 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 2]: Input to LLM: respuesta mongo: test> admin              40.00 KiB
+                                                                       config             72.00 KiB
+                                                                       historias          56.00 KiB
+                                                                       local              88.00 KiB
+                                                                       restaurants         1.21 MiB
+                                                                       test               72.00 KiB
+                                                                       wallapop-clone    216.00 KiB
+                                                                       writing_agent_db   56.00 KiB
+2025-04-16 12:18:10.521 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          consulta usuario: hola
+                          respuesta modelo: consulta mongo: show dbs
+                          
+                          Entrada del usuario: respuesta mongo: test> admin              40.00 KiB
+                          config             72.00 KiB
+                          historias          56.00 KiB
+                          local              88.00 KiB
+                          restaurants         1.21 MiB
+                          test               72.00 KiB
+                          wallapop-clone    216.00 KiB
+                          writing_agent_db   56.00 KiB
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:18:11.334 - DEBUG - [Respuesta Cruda Modelo]: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+2025-04-16 12:18:11.348 - DEBUG - [Respuesta Limpia Modelo]: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+2025-04-16 12:18:11.361 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+2025-04-16 12:18:11.371 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Final User Response]: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+2025-04-16 12:18:38.983 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Received Query]: {"user_query":"ok entra en restaurants y dime cuantos hay","confirmed_command":null}
+2025-04-16 12:18:38.995 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] User Query]: ok entra en restaurants y dime cuantos hay
+2025-04-16 12:18:39.004 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1]: Input to LLM: ok entra en restaurants y dime cuantos hay
+2025-04-16 12:18:39.013 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          consulta usuario: hola
+                          respuesta modelo: consulta mongo: show dbs
+                          consulta usuario: respuesta mongo: test> admin              40.00 KiB
+                          config             72.00 KiB
+                          historias          56.00 KiB
+                          local              88.00 KiB
+                          restaurants         1.21 MiB
+                          test               72.00 KiB
+                          wallapop-clone    216.00 KiB
+                          writing_agent_db   56.00 KiB
+                          respuesta modelo: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+                          
+                          Entrada del usuario: ok entra en restaurants y dime cuantos hay
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:18:39.568 - DEBUG - [Respuesta Cruda Modelo]: consulta mongo: use restaurants
+2025-04-16 12:18:39.597 - DEBUG - [Respuesta Limpia Modelo]: consulta mongo: use restaurants
+2025-04-16 12:18:39.625 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: consulta mongo: use restaurants
+2025-04-16 12:18:39.641 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Executing Safe Command]: use restaurants
+2025-04-16 12:18:39.653 - DEBUG - [Executor Input]: use restaurants
+2025-04-16 12:18:40.694 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'test> switched to db restaurants'
+2025-04-16 12:18:40.726 - DEBUG - [Executor Output]: test> switched to db restaurants
+2025-04-16 12:18:40.743 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Mongo Output]: test> switched to db restaurants
+2025-04-16 12:18:40.752 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Formatted Mongo Response]: respuesta mongo: test> switched to db restaurants
+2025-04-16 12:18:40.763 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 2]: Input to LLM: respuesta mongo: test> switched to db restaurants
+2025-04-16 12:18:40.774 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          consulta usuario: hola
+                          respuesta modelo: consulta mongo: show dbs
+                          consulta usuario: respuesta mongo: test> admin              40.00 KiB
+                          config             72.00 KiB
+                          historias          56.00 KiB
+                          local              88.00 KiB
+                          restaurants         1.21 MiB
+                          test               72.00 KiB
+                          wallapop-clone    216.00 KiB
+                          writing_agent_db   56.00 KiB
+                          respuesta modelo: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+                          consulta usuario: ok entra en restaurants y dime cuantos hay
+                          respuesta modelo: consulta mongo: use restaurants
+                          
+                          Entrada del usuario: respuesta mongo: test> switched to db restaurants
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:18:41.416 - DEBUG - [Respuesta Cruda Modelo]: consulta mongo: db.restaurants.countDocuments({})
+2025-04-16 12:18:41.438 - DEBUG - [Respuesta Limpia Modelo]: consulta mongo: db.restaurants.countDocuments({})
+2025-04-16 12:18:41.462 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: consulta mongo: db.restaurants.countDocuments({})
+2025-04-16 12:18:41.486 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 2 Executing Safe Command]: db.restaurants.countDocuments({})
+2025-04-16 12:18:41.506 - DEBUG - [Executor Input]: db.restaurants.countDocuments({})
+2025-04-16 12:18:42.578 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'restaurants> 3772'
+2025-04-16 12:18:42.591 - DEBUG - [Executor Output]: restaurants> 3772
+2025-04-16 12:18:42.600 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 2 Mongo Output]: restaurants> 3772
+2025-04-16 12:18:42.609 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 2 Formatted Mongo Response]: respuesta mongo: restaurants> 3772
+2025-04-16 12:18:42.617 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 3]: Input to LLM: respuesta mongo: restaurants> 3772
+2025-04-16 12:18:42.627 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          consulta usuario: hola
+                          respuesta modelo: consulta mongo: show dbs
+                          consulta usuario: respuesta mongo: test> admin              40.00 KiB
+                          config             72.00 KiB
+                          historias          56.00 KiB
+                          local              88.00 KiB
+                          restaurants         1.21 MiB
+                          test               72.00 KiB
+                          wallapop-clone    216.00 KiB
+                          writing_agent_db   56.00 KiB
+                          respuesta modelo: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+                          consulta usuario: ok entra en restaurants y dime cuantos hay
+                          respuesta modelo: consulta mongo: use restaurants
+                          consulta usuario: respuesta mongo: test> switched to db restaurants
+                          respuesta modelo: consulta mongo: db.restaurants.countDocuments({})
+                          
+                          Entrada del usuario: respuesta mongo: restaurants> 3772
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:18:43.229 - DEBUG - [Respuesta Cruda Modelo]: respuesta usuario: Hay 3772 documentos en la colección 'restaurants' de la base de datos 'restaurants'.
+2025-04-16 12:18:43.237 - DEBUG - [Respuesta Limpia Modelo]: respuesta usuario: Hay 3772 documentos en la colección 'restaurants' de la base de datos 'restaurants'.
+2025-04-16 12:18:43.246 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: respuesta usuario: Hay 3772 documentos en la colección 'restaurants' de la base de datos 'restaurants'.
+2025-04-16 12:18:43.254 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Final User Response]: Hay 3772 documentos en la colección 'restaurants' de la base de datos 'restaurants'.
+2025-04-16 12:19:36.126 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Received Query]: {"user_query":"filtramenlos por barrios","confirmed_command":null}
+2025-04-16 12:19:36.137 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] User Query]: filtramenlos por barrios
+2025-04-16 12:19:36.146 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1]: Input to LLM: filtramenlos por barrios
+2025-04-16 12:19:36.155 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          consulta usuario: hola
+                          respuesta modelo: consulta mongo: show dbs
+                          consulta usuario: respuesta mongo: test> admin              40.00 KiB
+                          config             72.00 KiB
+                          historias          56.00 KiB
+                          local              88.00 KiB
+                          restaurants         1.21 MiB
+                          test               72.00 KiB
+                          wallapop-clone    216.00 KiB
+                          writing_agent_db   56.00 KiB
+                          respuesta modelo: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+                          consulta usuario: ok entra en restaurants y dime cuantos hay
+                          respuesta modelo: consulta mongo: use restaurants
+                          consulta usuario: respuesta mongo: test> switched to db restaurants
+                          respuesta modelo: consulta mongo: db.restaurants.countDocuments({})
+                          consulta usuario: respuesta mongo: restaurants> 3772
+                          respuesta modelo: respuesta usuario: Hay 3772 documentos en la colección 'restaurants' de la base de datos 'restaurants'.
+                          
+                          Entrada del usuario: filtramenlos por barrios
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:19:36.766 - DEBUG - [Respuesta Cruda Modelo]: consulta mongo: db.restaurants.distinct("borough")
+2025-04-16 12:19:36.778 - DEBUG - [Respuesta Limpia Modelo]: consulta mongo: db.restaurants.distinct("borough")
+2025-04-16 12:19:36.795 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: consulta mongo: db.restaurants.distinct("borough")
+2025-04-16 12:19:36.803 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Executing Safe Command]: db.restaurants.distinct("borough")
+2025-04-16 12:19:36.822 - DEBUG - [Executor Input]: db.restaurants.distinct("borough")
+2025-04-16 12:19:37.962 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: 'restaurants> [ 'Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ]'
+2025-04-16 12:19:37.985 - DEBUG - [Executor Output]: restaurants> [ 'Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ]
+2025-04-16 12:19:38.016 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Mongo Output]: restaurants> [ 'Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ]
+2025-04-16 12:19:38.033 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Formatted Mongo Response]: respuesta mongo: restaurants> [ 'Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ]
+2025-04-16 12:19:38.042 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 2]: Input to LLM: respuesta mongo: restaurants> [ 'Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ]
+2025-04-16 12:19:38.051 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          consulta usuario: hola
+                          respuesta modelo: consulta mongo: show dbs
+                          consulta usuario: respuesta mongo: test> admin              40.00 KiB
+                          config             72.00 KiB
+                          historias          56.00 KiB
+                          local              88.00 KiB
+                          restaurants         1.21 MiB
+                          test               72.00 KiB
+                          wallapop-clone    216.00 KiB
+                          writing_agent_db   56.00 KiB
+                          respuesta modelo: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+                          consulta usuario: ok entra en restaurants y dime cuantos hay
+                          respuesta modelo: consulta mongo: use restaurants
+                          consulta usuario: respuesta mongo: test> switched to db restaurants
+                          respuesta modelo: consulta mongo: db.restaurants.countDocuments({})
+                          consulta usuario: respuesta mongo: restaurants> 3772
+                          respuesta modelo: respuesta usuario: Hay 3772 documentos en la colección 'restaurants' de la base de datos 'restaurants'.
+                          consulta usuario: filtramenlos por barrios
+                          respuesta modelo: consulta mongo: db.restaurants.distinct("borough")
+                          
+                          Entrada del usuario: respuesta mongo: restaurants> [ 'Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ]
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:19:38.704 - DEBUG - [Respuesta Cruda Modelo]: respuesta usuario: Los barrios distintos en la colección 'restaurants' son Bronx, Brooklyn, Manhattan, Queens y Staten Island.
+2025-04-16 12:19:38.726 - DEBUG - [Respuesta Limpia Modelo]: respuesta usuario: Los barrios distintos en la colección 'restaurants' son Bronx, Brooklyn, Manhattan, Queens y Staten Island.
+2025-04-16 12:19:38.734 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: respuesta usuario: Los barrios distintos en la colección 'restaurants' son Bronx, Brooklyn, Manhattan, Queens y Staten Island.
+2025-04-16 12:19:38.742 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Final User Response]: Los barrios distintos en la colección 'restaurants' son Bronx, Brooklyn, Manhattan, Queens y Staten Island.
+2025-04-16 12:20:00.353 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Received Query]: {"user_query":"cuantos hay en cada barrio?","confirmed_command":null}
+2025-04-16 12:20:00.368 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] User Query]: cuantos hay en cada barrio?
+2025-04-16 12:20:00.379 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1]: Input to LLM: cuantos hay en cada barrio?
+2025-04-16 12:20:00.388 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          consulta usuario: hola
+                          respuesta modelo: consulta mongo: show dbs
+                          consulta usuario: respuesta mongo: test> admin              40.00 KiB
+                          config             72.00 KiB
+                          historias          56.00 KiB
+                          local              88.00 KiB
+                          restaurants         1.21 MiB
+                          test               72.00 KiB
+                          wallapop-clone    216.00 KiB
+                          writing_agent_db   56.00 KiB
+                          respuesta modelo: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+                          consulta usuario: ok entra en restaurants y dime cuantos hay
+                          respuesta modelo: consulta mongo: use restaurants
+                          consulta usuario: respuesta mongo: test> switched to db restaurants
+                          respuesta modelo: consulta mongo: db.restaurants.countDocuments({})
+                          consulta usuario: respuesta mongo: restaurants> 3772
+                          respuesta modelo: respuesta usuario: Hay 3772 documentos en la colección 'restaurants' de la base de datos 'restaurants'.
+                          consulta usuario: filtramenlos por barrios
+                          respuesta modelo: consulta mongo: db.restaurants.distinct("borough")
+                          consulta usuario: respuesta mongo: restaurants> [ 'Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ]
+                          respuesta modelo: respuesta usuario: Los barrios distintos en la colección 'restaurants' son Bronx, Brooklyn, Manhattan, Queens y Staten Island.
+                          
+                          Entrada del usuario: cuantos hay en cada barrio?
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:20:01.345 - DEBUG - [Respuesta Cruda Modelo]: consulta mongo: db.restaurants.aggregate([
+                                    {
+                                      $group: {
+                                        _id: "$borough",
+                                        count: { $sum: 1 }
+                                      }
+                                    },
+                                    {
+                                      $project: {
+                                        borough: "$_id",
+                                        count: 1,
+                                        _id: 0
+                                      }
+                                    }
+                                  ])
+2025-04-16 12:20:01.375 - DEBUG - [Respuesta Limpia Modelo]: consulta mongo: db.restaurants.aggregate([
+                                     {
+                                       $group: {
+                                         _id: "$borough",
+                                         count: { $sum: 1 }
+                                       }
+                                     },
+                                     {
+                                       $project: {
+                                         borough: "$_id",
+                                         count: 1,
+                                         _id: 0
+                                       }
+                                     }
+                                   ])
+2025-04-16 12:20:01.384 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: consulta mongo: db.restaurants.aggregate([
+                                                                                {
+                                                                                  $group: {
+                                                                                    _id: "$borough",
+                                                                                    count: { $sum: 1 }
+                                                                                  }
+                                                                                },
+                                                                                {
+                                                                                  $project: {
+                                                                                    borough: "$_id",
+                                                                                    count: 1,
+                                                                                    _id: 0
+                                                                                  }
+                                                                                }
+                                                                              ])
+2025-04-16 12:20:01.396 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Executing Safe Command]: db.restaurants.aggregate([
+                                                                                                {
+                                                                                                  $group: {
+                                                                                                    _id: "$borough",
+                                                                                                    count: { $sum: 1 }
+                                                                                                  }
+                                                                                                },
+                                                                                                {
+                                                                                                  $project: {
+                                                                                                    borough: "$_id",
+                                                                                                    count: 1,
+                                                                                                    _id: 0
+                                                                                                  }
+                                                                                                }
+                                                                                              ])
+2025-04-16 12:20:01.404 - DEBUG - [Executor Input]: db.restaurants.aggregate([
+                            {
+                              $group: {
+                                _id: "$borough",
+                                count: { $sum: 1 }
+                              }
+                            },
+                            {
+                              $project: {
+                                borough: "$_id",
+                                count: 1,
+                                _id: 0
+                              }
+                            }
+                          ])
+2025-04-16 12:20:02.542 - DEBUG - [Executor Timeout]: Timeout (1s) waiting for prompt. Last line read: ']'
+2025-04-16 12:20:02.551 - DEBUG - [Executor Output]: restaurants> ... ... ... ... ... ... ... ... ... ... ... ... ... ... [
+                             { count: 309, borough: 'Bronx' },
+                             { count: 684, borough: 'Brooklyn' },
+                             { count: 1883, borough: 'Manhattan' },
+                             { count: 738, borough: 'Queens' },
+                             { count: 158, borough: 'Staten Island' }
+                           ]
+2025-04-16 12:20:02.561 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Mongo Output]: restaurants> ... ... ... ... ... ... ... ... ... ... ... ... ... ... [
+                                                                                      { count: 309, borough: 'Bronx' },
+                                                                                      { count: 684, borough: 'Brooklyn' },
+                                                                                      { count: 1883, borough: 'Manhattan' },
+                                                                                      { count: 738, borough: 'Queens' },
+                                                                                      { count: 158, borough: 'Staten Island' }
+                                                                                    ]
+2025-04-16 12:20:02.572 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 1 Formatted Mongo Response]: respuesta mongo: restaurants> ... ... ... ... ... ... ... ... ... ... ... ... ... ... [
+                                                                                                  { count: 309, borough: 'Bronx' },
+                                                                                                  { count: 684, borough: 'Brooklyn' },
+                                                                                                  { count: 1883, borough: 'Manhattan' },
+                                                                                                  { count: 738, borough: 'Queens' },
+                                                                                                  { count: 158, borough: 'Staten Island' }
+                                                                                                ]
+2025-04-16 12:20:02.581 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Iteration 2]: Input to LLM: respuesta mongo: restaurants> ... ... ... ... ... ... ... ... ... ... ... ... ... ... [
+                                                                         { count: 309, borough: 'Bronx' },
+                                                                         { count: 684, borough: 'Brooklyn' },
+                                                                         { count: 1883, borough: 'Manhattan' },
+                                                                         { count: 738, borough: 'Queens' },
+                                                                         { count: 158, borough: 'Staten Island' }
+                                                                       ]
+2025-04-16 12:20:02.592 - DEBUG - [Prompt Enviado]: Advertencia: El usuario puede no tener conocimientos de bases de datos. Responde de forma clara y sencilla, explicando los conceptos si es necesario.
+                          
+                          Eres el agente Gemini-2.0-flash-001, un asistente experto en MongoDB. Interactúas con MongoDB usando la función `execute_mongo_command`.
+                          
+                          **Características Clave:**
+                          
+                          1.  **Mantenimiento de Contexto:** ¡Importante! El sistema **recuerda** la base de datos seleccionada con `use` entre comandos. Puedes realizar operaciones en varios pasos enviando comandos individuales secuencialmente. Analiza el 'Historial de la conversación' para saber en qué base de datos estás.
+                          2.  **Comandos Soportados:** Puedes usar la mayoría de comandos estándar de `mongosh`:
+                              *   Selección de BD: `use <nombre_db>`
+                              *   Información: `db.getName()`, `show dbs`, `show collections`, `db.getCollectionNames()`
+                              *   Operaciones CRUD: `db.<col>.insertOne({ ... })`, `db.<col>.insertMany([{...}, {...}])`, `db.<col>.find({ ... })`, `db.<col>.updateOne({ ... }, { ... })`, `db.<col>.deleteOne({ ... })`, `db.<col>.countDocuments({ ... })` (Nota: Llaves para JSON deben escaparse como `{` y `}`).
+                              *   Otros: `print('...')`, `db.runCommand({ ... })`
+                          3.  **Ejecución Secuencial:** Para tareas que requieren múltiples pasos (ej. cambiar de DB y luego buscar), envía **un comando por cada respuesta**. No intentes encadenar comandos con punto y coma (`;`) en una sola respuesta.
+                          
+                          **Flujo de Trabajo Autónomo:**
+                          
+                          1.  Recibirás una 'Entrada del usuario' inicial. Analízala junto con el 'Historial de la conversación'.
+                          2.  Determina el primer comando `mongosh` necesario para la tarea.
+                          3.  Genera tu respuesta como `consulta mongo: <comando>`.
+                          4.  **IMPORTANTE:** El sistema ejecutará tu comando y te devolverá **inmediatamente** el resultado como una nueva entrada en el historial con la etiqueta `respuesta mongo: <resultado>`.
+                          5.  **ITERACIÓN:** Analiza esta `respuesta mongo:` y el estado actual de la tarea.
+                              *   Si se necesitan más pasos (ej. ejecutar la consulta principal después de un `use`, o realizar otra acción), genera la siguiente `consulta mongo: <siguiente_comando>`. El sistema volverá a ejecutarlo y te dará el resultado.
+                              *   Repite este proceso, generando `consulta mongo:` para cada paso necesario.
+                          6.  **FINALIZACIÓN:** Cuando hayas completado **todos** los pasos necesarios para satisfacer la petición original del usuario, genera tu respuesta final como `respuesta usuario: <mensaje_final_al_usuario>`. Esto detendrá el ciclo de iteración para esa petición.
+                          7.  **SEGURIDAD:** Si necesitas ejecutar un comando peligroso (ej. `dropDatabase`, `drop`, `delete`), **antes** de generar la `consulta mongo:` para ese comando, genera `respuesta usuario: ¿Estás seguro de que quieres ejecutar [comando peligroso]?`. El sistema gestionará la confirmación del usuario; si es positiva, recibirás una indicación para proceder, momento en el cual generarás la `consulta mongo:` peligrosa. Si es negativa, genera una `respuesta usuario:` informando que se canceló.
+                          8.  **FORMATO:** Tu respuesta DEBE empezar SIEMPRE con `consulta mongo:` o `respuesta usuario:`, seguido de dos puntos y un espacio.
+                          
+                          **Ejemplos de Secuencia Autónoma:**
+                          
+                          *   *Usuario: "En la base de datos 'productos', busca los artículos con precio menor a 50 en la colección 'inventario' y dime cuántos hay."*
+                              *   *Tu Respuesta 1:* `consulta mongo: use productos`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db productos)*
+                              *   *Tu Respuesta 2:* `consulta mongo: db.inventario.find({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: [resultado de la búsqueda])*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.inventario.countDocuments({ price: { $lt: 50 } })`
+                              *   *(Sistema añade al historial: respuesta mongo: 5)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: Encontré 5 artículos con precio menor a 50 en la colección 'inventario' de la base de datos 'productos'. Los resultados de la búsqueda se mostraron previamente.`
+                          
+                          *   *Usuario: "Muéstrame todas las bases de datos."*
+                              *   *Tu Respuesta 1:* `consulta mongo: show dbs`
+                              *   *(Sistema añade al historial: respuesta mongo: admin 0.000GB ... local 0.000GB)*
+                              *   *Tu Respuesta 2:* `respuesta usuario: Las bases de datos disponibles son admin, local, ...`
+                          
+                          *   *Usuario: "Elimina la colección 'logs_viejos' de la base de datos 'auditoria'."*
+                              *   *Tu Respuesta 1:* `respuesta usuario: ¿Estás seguro de que quieres ejecutar db.logs_viejos.drop()?`
+                              *   *(Usuario confirma)*
+                              *   *(Sistema añade al historial: respuesta usuario: Confirmación recibida para db.logs_viejos.drop())* # O similar
+                              *   *Tu Respuesta 2:* `consulta mongo: use auditoria`
+                              *   *(Sistema añade al historial: respuesta mongo: switched to db auditoria)*
+                              *   *Tu Respuesta 3:* `consulta mongo: db.logs_viejos.drop()`
+                              *   *(Sistema añade al historial: respuesta mongo: true)*
+                              *   *Tu Respuesta 4:* `respuesta usuario: La colección 'logs_viejos' ha sido eliminada de la base de datos 'auditoria'.`
+                          
+                          Historial de la conversación:
+                          consulta usuario: hola
+                          respuesta modelo: consulta mongo: show dbs
+                          consulta usuario: respuesta mongo: test> admin              40.00 KiB
+                          config             72.00 KiB
+                          historias          56.00 KiB
+                          local              88.00 KiB
+                          restaurants         1.21 MiB
+                          test               72.00 KiB
+                          wallapop-clone    216.00 KiB
+                          writing_agent_db   56.00 KiB
+                          respuesta modelo: respuesta usuario: Las bases de datos disponibles son admin, config, historias, local, restaurants, test, wallapop-clone, writing_agent_db.
+                          consulta usuario: ok entra en restaurants y dime cuantos hay
+                          respuesta modelo: consulta mongo: use restaurants
+                          consulta usuario: respuesta mongo: test> switched to db restaurants
+                          respuesta modelo: consulta mongo: db.restaurants.countDocuments({})
+                          consulta usuario: respuesta mongo: restaurants> 3772
+                          respuesta modelo: respuesta usuario: Hay 3772 documentos en la colección 'restaurants' de la base de datos 'restaurants'.
+                          consulta usuario: filtramenlos por barrios
+                          respuesta modelo: consulta mongo: db.restaurants.distinct("borough")
+                          consulta usuario: respuesta mongo: restaurants> [ 'Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ]
+                          respuesta modelo: respuesta usuario: Los barrios distintos en la colección 'restaurants' son Bronx, Brooklyn, Manhattan, Queens y Staten Island.
+                          consulta usuario: cuantos hay en cada barrio?
+                          respuesta modelo: consulta mongo: db.restaurants.aggregate([
+                            {
+                              $group: {
+                                _id: "$borough",
+                                count: { $sum: 1 }
+                              }
+                            },
+                            {
+                              $project: {
+                                borough: "$_id",
+                                count: 1,
+                                _id: 0
+                              }
+                            }
+                          ])
+                          
+                          Entrada del usuario: respuesta mongo: restaurants> ... ... ... ... ... ... ... ... ... ... ... ... ... ... [
+                            { count: 309, borough: 'Bronx' },
+                            { count: 684, borough: 'Brooklyn' },
+                            { count: 1883, borough: 'Manhattan' },
+                            { count: 738, borough: 'Queens' },
+                            { count: 158, borough: 'Staten Island' }
+                          ]
+                          Tu respuesta (con etiqueta):
+2025-04-16 12:20:03.447 - DEBUG - [Respuesta Cruda Modelo]: respuesta usuario: El número de restaurantes por barrio es: Bronx (309), Brooklyn (684), Manhattan (1883), Queens (738) y Staten Island (158).
+2025-04-16 12:20:03.459 - DEBUG - [Respuesta Limpia Modelo]: respuesta usuario: El número de restaurantes por barrio es: Bronx (309), Brooklyn (684), Manhattan (1883), Queens (738) y Staten Island (158).
+2025-04-16 12:20:03.467 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Raw Model Response]: respuesta usuario: El número de restaurantes por barrio es: Bronx (309), Brooklyn (684), Manhattan (1883), Queens (738) y Staten Island (158).
+2025-04-16 12:20:03.477 - DEBUG - [API Chat [4c49ce27-3f32-457a-a504-271b8d1497e3] Final User Response]: El número de restaurantes por barrio es: Bronx (309), Brooklyn (684), Manhattan (1883), Queens (738) y Staten Island (158).
